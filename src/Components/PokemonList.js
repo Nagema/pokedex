@@ -1,72 +1,29 @@
 import React from 'react';
+// import { Link } from 'react-router-dom';
 class PokedexFilter extends React.Component {
   render() {
+    const {pokemons} = this.props;
     return (
       <main className="main-view">
-        <article className="pokemons-list">
+        <ul className="pokemons-list"> 
+        {pokemons.map((pokemon) => {
+          return (
+            // <Link to={pokemon(pokemon)}>
+          <li className="pokemon_li" key={pokemon.id}>
           <div className="pokemon-card">
             <div className="background-wrapper">
               <div></div>
               <div></div>
             </div>
             <span className="remove-pokemon"><i className="material-icons">close</i></span>
-            <div className="image-wrapper"><img src="images/pokemons/bulbasaur.png" alt="bulbasaur" className="pokemon-image" /></div>
-            <div className="pokemon-title">bulbasaur</div>
+            <div className="image-wrapper"><img src={pokemon.image} alt="bulbasaur" className="pokemon-image"/></div>
+            <div className="pokemon-title">{pokemon.name}</div>
           </div>
-          <div className="pokemon-card">
-            <div className="background-wrapper">
-              <div></div>
-              <div></div>
-            </div>
-            <span className="remove-pokemon"><i className="material-icons">close</i></span>
-            <div className="image-wrapper"><img src="images/pokemons/ivysaur.png" alt="bulbasaur" className="pokemon-image" /></div>
-            <div className="pokemon-title">
-              ivysaur
-            </div>
-          </div>
-          <div className="pokemon-card">
-            <div className="background-wrapper">
-              <div></div>
-              <div></div>
-            </div>
-            <span className="remove-pokemon"><i className="material-icons">close</i></span>
-            <div className="image-wrapper"><img src="images/pokemons/venusaur.png" alt="bulbasaur" className="pokemon-image" /></div>
-            <div className="pokemon-title">
-              venusaur
-            </div>
-          </div>
-          <div className="pokemon-card">
-            <div className="background-wrapper">
-              <div></div>
-            </div>
-            <span className="remove-pokemon"><i className="material-icons">close</i></span>
-            <div className="image-wrapper"><img src="images/pokemons/charmander.png" alt="bulbasaur" className="pokemon-image" /></div>
-            <div className="pokemon-title">
-              charmander
-            </div>
-          </div>
-          <div className="pokemon-card">
-            <div className="background-wrapper">
-              <div></div>
-            </div>
-            <span className="remove-pokemon"><i className="material-icons">close</i></span>
-            <div className="image-wrapper"><img src="images/pokemons/charmeleon.png" alt="bulbasaur" className="pokemon-image" /></div>
-            <div className="pokemon-title">
-              charmeleon
-            </div>
-          </div>
-          <div className="pokemon-card">
-            <div className="background-wrapper">
-              <div></div>
-              <div></div>
-            </div>
-            <span className="remove-pokemon"><i className="material-icons">close</i></span>
-            <div className="image-wrapper"><img src="images/pokemons/charizard.png" alt="bulbasaur" className="pokemon-image" /></div>
-            <div className="pokemon-title">
-              charizard
-            </div>
-          </div>
-        </article>
+          </li>
+          // </Link>
+           )
+          })}
+        </ul>
       </main>
     )
   }
